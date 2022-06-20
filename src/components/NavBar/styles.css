@@ -1,0 +1,25 @@
+ul{
+    display:flex;
+    flex-direction:row;
+    list-style: none;
+}
+li{
+    text-decoration:none;
+}
+
+a{
+    text-decoration: none;
+    color:bisque;
+    padding:10px;
+    margin: 0 10px;
+}
+.navBar{
+    background-color: rgba(34, 32, 30, 0.832);
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    justify-content: flex-end;
+    padding: 10px;
+}
