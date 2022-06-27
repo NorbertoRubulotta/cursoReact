@@ -1,0 +1,42 @@
+.btn
+{border-radius: 0.5rem;
+  padding: 1rem;
+  margin: .5rem;
+  display: inline;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffad05;
+  background-color: black;
+  font-size: 1rem;
+  border-color: transparent;
+  transition: border-color 400ms ease, background-color 400ms ease,
+ color 400ms ease; }
+ .btn:hover{
+    color: #000000;
+    background-color: #ffad05;
+    cursor: pointer;
+    transition: border-color 400ms ease, background-color 400ms ease,
+ color 400ms ease; }
+ 
+ .flex-row{
+     display: flex;
+     flex-direction: row;
+ }
+ .flex-center{
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+
+ }
+ .count-container{
+     background-color:black;
+     max-width: 200px;
+     margin: 0 auto;
+     border-radius: 15px;
+ }
+ p{
+     color: white;
+     font-size: 1.5rem;
+     text-align: center;
+ }

@@ -13,8 +13,7 @@ const NavBar = () => {
     <CartWidget/>
 </ul>
 </nav>
-
     )
 }
 
-export default NavBar;
+ export default NavBar;
