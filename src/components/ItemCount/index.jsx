@@ -13,11 +13,6 @@ const ItemCount = ({ handleAdd }) => {
 
     };
 
-    /* const onDecrement = () => {
-    
-    } */
-
-
     return (
         <div className="count-container">
             <div className="flex-row flex-center">

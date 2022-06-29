@@ -1,0 +1,22 @@
+.product-card {
+   display: flex;
+    text-align: start;
+    gap: 10em;
+    margin: 20px auto;
+  }
+  
+  .product-card__image {
+    width: 320px;
+  }
+  
+  .product-card__name {
+    font-size: 1.6rem;
+  }
+
+  .column{
+      display: flex;
+      flex-direction: column;
+  }
+  .product-card__div{
+     justify-content: space-evenly;
+  }

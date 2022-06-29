@@ -18,7 +18,15 @@
     cursor: pointer;
     transition: border-color 400ms ease, background-color 400ms ease,
  color 400ms ease; }
- 
+
+ .btn:disabled{
+     color: #000000;
+    
+ }
+ .btn:disabled:hover{
+    background-color: #000000;
+    cursor:auto;
+ }
  .flex-row{
      display: flex;
      flex-direction: row;
