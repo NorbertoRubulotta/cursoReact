@@ -4,37 +4,7 @@ import Item from '../Item';
 
 
 
-const ItemList = () => {
-    const [products, setProducts] = useState([]);
-
-    /*   const getProductos = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve();
-          }, 2000);
-        });
-   */
-    useEffect(() => {
-
-        const getProductos = async () => {
-            try {
-                const response = await fetch('https://fakestoreapi.com/products');
-                const data = await response.json();
-
-
-                setProducts(data);
-            } catch (error) {
-                console.log("Error:");
-                console.log(error);
-            }
-        }
-
-        getProductos()
-
-    }, [])
-
-    console.log(products);
-
-
+const ItemList = ({products}) => {
 
     return (
         <div className="product-list-container">

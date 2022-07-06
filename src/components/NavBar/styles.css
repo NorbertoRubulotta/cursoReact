@@ -1,4 +1,4 @@
-ul{
+.nav-Container{
     display:flex;
     flex-direction:row;
     list-style: none;
