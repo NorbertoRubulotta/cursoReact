@@ -24,7 +24,26 @@
     text-align: left;
     color: black;
   }
-
+ .btnFinishPurchase{
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: .5rem;
+    display: inline;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #070706;
+    background-color: whitesmoke;
+    font-size: 1rem;
+    border-color: transparent;
+    transition: border-color 400ms ease, background-color 400ms ease,
+   color 400ms ease; }
+   .btnFinishPurchase:hover{
+      color: #000000;
+      background-color: #8e8c8a;
+      cursor: pointer;
+      transition: border-color 400ms ease, background-color 400ms ease,
+   color 400ms ease; }
 
 
 

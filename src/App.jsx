@@ -4,12 +4,12 @@ import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemListContainer from './containers/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import NotFound from './components/NotFound';
-import { TailSpin } from 'react-loader-spinner';
+import Cart from './containers/Cart';
 
 function App() {
 
   
-  return (
+  return ( 
     <BrowserRouter>
       <div className="">
         <NavBar/>
@@ -17,11 +17,11 @@ function App() {
         <Route path="/" element={<ItemListContainer/>}></Route>
         <Route path='/category/:category' element= {<ItemListContainer/>}></Route>
         <Route path='/detail/:productId' element= {<ItemDetailContainer/>}></Route>
+        <Route path='/cart' element= {<Cart/>}></Route>
         <Route path='*' element= {<NotFound/>}> </Route>
         </Routes>
       </div>
     </BrowserRouter>
-  
   );
 }
 

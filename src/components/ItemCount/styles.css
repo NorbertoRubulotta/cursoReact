@@ -24,7 +24,7 @@
     
  }
  .btn:disabled:hover{
-    background-color: #000000;
+    background-color: whitesmoke;
     cursor:auto;
  }
  .flex-row{
