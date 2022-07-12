@@ -3,12 +3,13 @@ import { Shop } from '../../context/ShopContext';
 import './styles.css';
 const Cart = () => {
 
-  const { cart , removeCartItem } = useContext(Shop);
+  const { cart , removeCartItem, removeAllItems } = useContext(Shop);
 
   console.log(cart)
   return (
+    <div className="cartContainer">
+    {(cart.length) > 0 ?
     <section>
-
       <h2>Shopping Basket</h2>
 
       <ul>
@@ -26,9 +27,12 @@ const Cart = () => {
         })}
 
       </ul>
-
-    </section>
-
+      <button onClick={() => removeAllItems()}>Remove All Items</button>
+    </section> :
+    <section>
+      <h2>The shopping cart is empty...</h2>
+    </section>}
+    </div>
 
 
   )

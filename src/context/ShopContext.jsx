@@ -34,11 +34,13 @@ console.log(product, quantity);
         console.log(notDeletedItems);
         setCart(notDeletedItems);
     }
-
+const removeAllItems = () => {
+    setCart([]);
+}
 
     return (
 
-        <Shop.Provider value={{ estadoA, setEstadoA, addItem, cart, removeCartItem }}>
+        <Shop.Provider value={{ estadoA, setEstadoA, addItem, cart, removeCartItem, removeAllItems }}>
             {children}
         </Shop.Provider>
     )
