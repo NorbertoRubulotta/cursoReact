@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Item from '../Item';
-/* import './styles/ItemList.css'; */
 
 
 
