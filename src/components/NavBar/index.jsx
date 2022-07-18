@@ -6,9 +6,9 @@ import { Shop } from '../../context/ShopContext';
 
 const NavBar = () => {
 
-const {estadoA} = useContext(Shop)
+const {cart} = useContext(Shop)
 
-console.log(estadoA);
+
 
     return (
         <nav className = 'navBar'>
@@ -19,9 +19,8 @@ console.log(estadoA);
                 <li className= 'nav-element'><Link to = "/category/women's clothing">Women's clothing</Link></li>
                 <li className= 'nav-element'><Link to = "/category/men's clothing">Men's clothing</Link></li>
 
-                <li className= 'nav-element'><a href="/#">{estadoA}</a></li>
-
-                <CartWidget/>
+               
+                {(cart.length) > 0 ? <CartWidget/> : <></>}
             </ul>
         </nav>
     )
