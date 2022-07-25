@@ -5,7 +5,7 @@ import ItemCount from '../ItemCount';
 import './styles.css';
 
 const ItemDetail = ({product}) => {
-  product.stock = 10;
+   product.stock = 10; 
 
  const  navigate = useNavigate();
 const [qtyAdded, setQtyAdded] = useState(0);

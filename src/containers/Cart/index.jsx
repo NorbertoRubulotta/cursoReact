@@ -1,6 +1,10 @@
+import { addDoc, collection } from 'firebase/firestore';
 import React, { useContext , useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Shop } from '../../context/ShopContext';
+import { db } from '../../firebase/config';
+import orderData from '../../utils/generateOrder';
+import guardarOrden from '../../utils/saveNewOrder';
 import './styles.css';
 const Cart = () => {
 
@@ -8,6 +12,17 @@ const Cart = () => {
   let CalculatedFinalPrice = 0;
   let totalQuantity = 0;;
   console.log(cart)
+
+  const confirmOrder = async () => {
+
+    const orden = orderData("Test", "Test Street 98", cart, finalPrice);
+    guardarOrden(cart, orden)
+    removeAllItems();
+      // Add a new document with a generated id.
+    /* const docRef = await addDoc(collection(db, "orders"), orden);
+    console.log("Document written with ID: ", docRef.id); */
+
+  }
   return (
     
     <div className="cartContainer">
@@ -38,6 +53,7 @@ const Cart = () => {
       </ul>
       <button onClick={() => removeAllItems()}>Remove All Items</button>
       <h3>Final Price : {finalPrice}</h3>
+      <button onClick={confirmOrder}>Confirm purchase</button>
     </section> :
     <section>
       <h2>The shopping cart is empty...</h2>
