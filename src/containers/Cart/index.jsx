@@ -55,9 +55,9 @@ const Cart = () => {
             <button className='btnConfirmPurchase' onClick={confirmOrder}>GO TO CHECK OUT</button>
           </article>
         </section> :
-        <section>
+        <section className='cartEmpty'>
           <h2>The shopping cart is empty...</h2>
-          <button className='backToHomeCart'><Link to='/'>Back to Home</Link></button>
+          <button className='BtnBackToHomeCart'><Link to='/'>Back to Home</Link></button>
         </section>}
     </div>
   )

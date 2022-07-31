@@ -7,6 +7,7 @@
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0,0.25);
     transition: .4s;
+    height:320px
   } 
   .product-card:hover{
     box-shadow: 0 3px 6px rgba(0, 0, 0,0.16), 0 3px 6px rgba(0, 0, 0,0.23);
