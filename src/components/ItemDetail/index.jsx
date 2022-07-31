@@ -14,8 +14,8 @@ const ItemDetail = ({ product }) => {
   const navigate = useNavigate();
   const [qtyAdded, setQtyAdded] = useState(0);
 
-  const notify = (count) =>
-  toast.success(` You added ${count} products to your shopping cart`, {
+  const notify = (count ) =>
+  toast.success(` You added ${count} products to your shopping cart `, {
     position: "top-right",
     autoClose: 2500,
     hideProgressBar: true,

@@ -5,6 +5,7 @@ import { Shop } from '../../context/ShopContext';
 import { db } from '../../firebase/config';
 import orderData from '../../utils/generateOrder';
 import guardarOrden from '../../utils/saveNewOrder';
+
 import './styles.css';
 const Cart = () => {
 
@@ -17,6 +18,7 @@ const Cart = () => {
 
     const orden = orderData("Test", "Test Street 98", cart, finalPrice);
     guardarOrden(cart, orden)
+
     removeAllItems();
   }
   return (

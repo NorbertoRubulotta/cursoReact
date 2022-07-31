@@ -1,5 +1,6 @@
 import { addDoc, collection, doc, getDoc, writeBatch } from "firebase/firestore"
 import { db } from "../firebase/config"
+import Swal from 'sweetalert2'
 
 const guardarOrden = (cart, orden) => {
     console.log("Guardar orden");
@@ -34,7 +35,12 @@ const guardarOrden = (cart, orden) => {
                 addDoc(collection(db, 'orders'), orden).then(({ id }) => {
                    
                     batch.commit().then(() => {
-                        alert("Se genero la order con id: " + id)
+                        Swal.fire({
+                            title: "New order generated successfully, id: "  ,
+                            text: id,
+                            icon: 'success',
+                            confirmButtonText: 'Accept'
+                          })
                     })
                 }).catch((err) => {
                     console.log(`Error: ${err.message}`);

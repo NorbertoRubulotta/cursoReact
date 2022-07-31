@@ -36,6 +36,7 @@ const ShopProvider = ({children}) => {
     }
 const removeAllItems = () => {
     setCart([]);
+    setTotalItems(0)
 }
 
     return (
