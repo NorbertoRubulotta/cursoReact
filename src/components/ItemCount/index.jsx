@@ -21,14 +21,15 @@ const ItemCount = ({ stock , onConfirm }) => {
 
     return (
         <div className="count-container">
-            <div className="flex-row flex-center">
-            <button className="btn" onClick={() => onAdd(-1)} disabled={count === initial ? true : null}>-</button>
-            <p>{count} </p>
-            <button className="btn" onClick={() => onAdd(+1)} disabled={count === stock ? true : null}>+</button>
+            <div className="add-quantity">
+            <button className="btn-plus" onClick={() => onAdd(-1)} disabled={count === initial ? true : null}>-</button>
+            <span>{count} </span>
+            <button className="btn-minus" onClick={() => onAdd(+1)} disabled={count === stock ? true : null}>+</button>
             </div>
-            <button className="btn" onClick={() => onConfirm(count) }
-                disabled={stock === 0 ? true : null}> Agregar al carrito</button>
-
+            <div className="addToCart">
+            <button className="btn-addToCart" onClick={() => onConfirm(count) }
+                disabled={stock === 0 ? true : null}> Add to Cart</button>
+            </div>
         </div>
     )
 }

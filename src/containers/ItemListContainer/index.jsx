@@ -15,7 +15,7 @@ const ItemListContainer = ({greeting}) => {
 
       const getProducts = async () => {
           try {
-            /* functionUploadProducts(); */
+             /* functionUploadProducts();  */
             const q = query(collection(db, "products"));
 
             const querySnapshot = await getDocs(q);

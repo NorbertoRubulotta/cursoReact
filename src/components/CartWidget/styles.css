@@ -1,6 +1,10 @@
 .cartNumber{
-    background-color: rgb(202, 194, 132);
+    background-color: rgb(83, 233, 83);;
     border-radius: 15px;
     padding: 5px;
     
+}
+
+.CartWidget:hover{
+    cursor: pointer;
 }

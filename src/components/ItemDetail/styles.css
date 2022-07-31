@@ -2,52 +2,74 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    max-width: 1024px;
+    max-width: 1400px;
     margin: 0 auto;
   }
-  .name{
+  .product-detail__name{
       text-align: left;
+      border-bottom: 1px solid #c1c1c1;
+      padding-bottom: 15px;
   }
   .product-detail__img {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
+    max-height: 600px;
   }
   .product-detail__info {
-    text-align: center;
+    text-align: left;
+    max-width: 400px;
   }
   .product-detail__info h2 {
     margin: 30px 0;
   }
   
   .product-detail__info p {
-    margin: 30px 0;
+
     text-align: left;
     color: black;
   }
- .btnFinishPurchase{
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin: .5rem;
-    display: inline;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    color: #070706;
-    background-color: whitesmoke;
-    font-size: 1rem;
-    border-color: transparent;
-    transition: border-color 400ms ease, background-color 400ms ease,
-   color 400ms ease; }
-   .btnFinishPurchase:hover{
-      color: #000000;
-      background-color: #8e8c8a;
+  .extra-info__brand, .extra-info__category,
+  .extra-info__origin,
+  .extra-info__alcohol,
+  .extra-info__volume{
+font-weight: 700;
+text-align: left;
+margin: 10px;
+  }
+  .extra-info__span{
+    font-weight: 400;
+  }
+  .extra-info__brand {
+    border-top: 1px solid #c1c1c1;
+    padding-top:15px;
+    text-align: left;
+  }
+  .product-detail__price{
+    margin: 15px auto;
+    font-size: 25px;
+    font-weight: 600;
+  }
+ .btnFinishPurchase, .btnContinue{
+  background-color: #000000;
+  color: white;
+  margin-top: 20px;
+  padding: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  width:100%;
+  font-size: 20px;
+  border-color: transparent;
+} 
+   .btnFinishPurchase:hover, .btnContinue:hover{
+      background-color: rgb(83, 233, 83);
       cursor: pointer;
       transition: border-color 400ms ease, background-color 400ms ease,
    color 400ms ease; }
 
 
 
-  @media only screen and (min-width: 800px) {
+   @media only screen and (min-width: 800px) {
     .product-detail {
       flex-direction: row;
       justify-content:space-between;
@@ -55,7 +77,8 @@
     }
     .product-detail__img {
         width: 100%;
-        max-width: 600px;
+        max-width: 800px;
+        max-height: 800px;
       }
 
   }

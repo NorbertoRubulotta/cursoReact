@@ -1,0 +1,30 @@
+.product-list-container{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.product{
+    width: 30%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius:20px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+@media(max-width:1000px){
+    .product{
+      width: 40%;
+  }
+  }
+
+  @media(max-width:750px){
+    .product{
+      width: 100%;
+  }
+  }
