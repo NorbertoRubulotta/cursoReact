@@ -21,13 +21,14 @@ const ItemCount = ({ stock , onConfirm }) => {
 
     return (
         <div className="count-container">
+            {stock === 0 ? <span className="noStock">Product out of stock </span> :
             <div className="add-quantity">
-            <button className="btn-plus" onClick={() => onAdd(-1)} disabled={count === initial ? true : null}>-</button>
+            <button className="btn-plus" onClick={() => onAdd(-1)} disabled={count === initial ? true : null} >-</button>
             <span>{count} </span>
-            <button className="btn-minus" onClick={() => onAdd(+1)} disabled={count === stock ? true : null}>+</button>
-            </div>
+            <button className="btn-minus" onClick={() => onAdd(+1)} disabled={count === stock ? true : null} >+</button>
+            </div>}
             <div className="addToCart">
-            <button className="btn-addToCart" onClick={() => onConfirm(count) }
+                <button className="btn-addToCart" onClick={() => onConfirm(count) }
                 disabled={stock === 0 ? true : null}> Add to Cart</button>
             </div>
         </div>

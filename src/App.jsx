@@ -8,9 +8,8 @@ import Cart from './containers/Cart';
 import ShopProvider from './context/ShopContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
-
-
 
   return (
     <ShopProvider>

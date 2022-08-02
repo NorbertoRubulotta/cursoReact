@@ -1,8 +1,10 @@
 
-const orderData = (name, address, cart, total) => {
+const orderData = (name, lastName, email, address, cart, total) => {
     return {
         buyer: {
             name: name,
+            lastName: lastName,
+            email: email,
             address: address
         },
         items: cart

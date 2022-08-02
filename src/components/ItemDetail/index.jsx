@@ -56,7 +56,7 @@ const ItemDetail = ({ product }) => {
         <p className="product-detail__description">{product.description}</p>
         <p className="product-detail__price">Price: USD {product.price}</p>
 
-        {!qtyAdded ?
+        {!qtyAdded ? 
           <ItemCount onConfirm={handleConfirm} stock={product.stock} />
           :
           <div>

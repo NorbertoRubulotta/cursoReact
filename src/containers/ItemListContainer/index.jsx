@@ -4,7 +4,6 @@ import ItemList from '../../components/ItemList/ItemList';
 import './styles.css';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/config';
-/* import functionUploadProducts from '../../utils/uploadProducts'; */
 
 const ItemListContainer = ({greeting}) => {
   
@@ -15,18 +14,13 @@ const ItemListContainer = ({greeting}) => {
 
       const getProducts = async () => {
           try {
-             /* functionUploadProducts();  */
+  
             const q = query(collection(db, "products"));
-
             const querySnapshot = await getDocs(q);
             const allProducts = [];
             querySnapshot.forEach((doc) => {
               allProducts.push({id: doc.id, ...doc.data()})
             });
-            console.log(allProducts);
-            /*   const response = await fetch('https://fakestoreapi.com/products');
-              const data = await response.json();
-              console.log(data); */
 
                if (category) {
 
@@ -48,14 +42,6 @@ const ItemListContainer = ({greeting}) => {
     useEffect(() => {
       getProducts()
       } , [category])
-
-
-
-  console.log(products);
-
-   
-
-
 
 
   return (

@@ -2,7 +2,6 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const functionUploadProducts = async () => {
-    console.log("Entra una vez");
     const response = await fetch('/products.json');
     const productsToUpload = await response.json();
 
@@ -19,7 +18,6 @@ const functionUploadProducts = async () => {
             volume: product.volume,
             image: product.image,
         });
-        console.log("Document written with ID: ", docRef.id);
     })
 }
 

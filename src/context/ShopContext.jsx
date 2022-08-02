@@ -11,10 +11,8 @@ const ShopProvider = ({children}) => {
 
 
     const addItem = (product, quantity) => {
-        console.log(product, quantity);
 
        const productoRepetido = isInCart(product);
-        console.log(productoRepetido);
         if (productoRepetido) {
             productoRepetido.quantity += quantity
             setCart([...cart])
@@ -31,7 +29,6 @@ const ShopProvider = ({children}) => {
 
     const removeCartItem = (product) => {
         const notDeletedItems = cart.filter(element => element.id !== product.id);
-        console.log(notDeletedItems);
         setCart(notDeletedItems);
     }
 const removeAllItems = () => {

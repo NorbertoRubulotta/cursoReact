@@ -1,26 +1,17 @@
-import { addDoc, collection } from 'firebase/firestore';
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import CartForm from '../../components/CartForm';
 import { Shop } from '../../context/ShopContext';
-import { db } from '../../firebase/config';
-import orderData from '../../utils/generateOrder';
-import guardarOrden from '../../utils/saveNewOrder';
-
 import './styles.css';
+
+
 const Cart = () => {
 
-  const { cart, removeCartItem, removeAllItems, finalPrice, setFinalPrice, totalItems, setTotalItems } = useContext(Shop);
+  const { cart, removeCartItem, removeAllItems, finalPrice, setFinalPrice, setTotalItems } = useContext(Shop);
   let CalculatedFinalPrice = 0;
-  let totalQuantity = 0;;
-  console.log(cart)
+  let totalQuantity = 0;
+  const [showForm, setShowForm] = useState(true);
 
-  const confirmOrder = async () => {
-
-    const orden = orderData("Test", "Test Street 98", cart, finalPrice);
-    guardarOrden(cart, orden)
-
-    removeAllItems();
-  }
   return (
 
     <div>
@@ -54,7 +45,8 @@ const Cart = () => {
           </article>
           <article className='checkOut'>
             <span className='cartFinalPrice'>Final Price : {finalPrice} USD</span>
-            <button className='btnConfirmPurchase' onClick={confirmOrder}>GO TO CHECK OUT</button>
+            
+            { showForm ? <button className='btnConfirmPurchase' onClick={() => {setShowForm(!showForm);}}> GO TO CHECK OUT</button> :  <CartForm/>}
           </article>
         </section> :
         <section className='cartEmpty'>

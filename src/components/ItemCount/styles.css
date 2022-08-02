@@ -56,3 +56,7 @@
     transition: border-color 400ms ease, background-color 400ms ease,
  color 400ms ease;
  }
+
+ .noStock{
+     color: red
+ }

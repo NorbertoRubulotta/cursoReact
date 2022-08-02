@@ -3,16 +3,11 @@ import { db } from "../firebase/config"
 import Swal from 'sweetalert2'
 
 const guardarOrden = (cart, orden) => {
-    console.log("Guardar orden");
-    console.log(cart);
-    console.log(orden);
-    
+
     const batch = writeBatch(db)
     
- 
     const outOfStock = []
     
-   
     cart.forEach((productoEnCart) => {
         getDoc(doc(db, 'products', productoEnCart.id))
         .then(async (documentSnapshot) => {
@@ -27,7 +22,6 @@ const guardarOrden = (cart, orden) => {
             } else {
                 outOfStock.push(producto)
             }
-            console.log("Productos fuera de stock:");
             console.log(outOfStock);
         })
     })
@@ -51,7 +45,12 @@ const guardarOrden = (cart, orden) => {
                 for (const producto of outOfStock) {
                     mensaje += `${producto.title}`
                 }
-                alert(`Productos fuera de stock: ${mensaje}`)
+                Swal.fire({
+                    title: "Productos fuera de stock: "  ,
+                    text: mensaje,
+                    icon: 'warning',
+                    confirmButtonText: 'Accept'
+                  })
             }
         
 }
