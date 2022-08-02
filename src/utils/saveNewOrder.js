@@ -8,23 +8,22 @@ const guardarOrden = (cart, orden) => {
     
     const outOfStock = []
     
-    cart.forEach((productoEnCart) => {
-        getDoc(doc(db, 'products', productoEnCart.id))
-        .then(async (documentSnapshot) => {
-            
-            const producto = {...documentSnapshot.data(), id: documentSnapshot.id};
+    cart.forEach( (productoEnCart) => { 
+           getDoc(doc(db, 'products', productoEnCart.id)).then(
+
+            async (documentSnapshot) => {
+
+            const product =  {...documentSnapshot.data(), id: documentSnapshot.id};
 
        
-            if (producto.stock >= productoEnCart.quantity) {
-                batch.update(doc(db, 'products', producto.id) ,{
-                    stock: producto.stock - productoEnCart.quantity
-                })
+            if (product.stock >= productoEnCart.quantity) {
+                batch.update(doc(db, 'products', product.id) ,{
+                    stock: product.stock - productoEnCart.quantity
+                });
             } else {
-                outOfStock.push(producto)
+                outOfStock.push(product)
             }
-            console.log(outOfStock);
-        })
-    })
+            
             if (outOfStock.length === 0) {
                 addDoc(collection(db, 'orders'), orden).then(({ id }) => {
                    
@@ -42,8 +41,8 @@ const guardarOrden = (cart, orden) => {
             
             } else {
                 let mensaje = ''
-                for (const producto of outOfStock) {
-                    mensaje += `${producto.title}`
+                for (const product of outOfStock) {
+                    mensaje += `${product.title}`
                 }
                 Swal.fire({
                     title: "Productos fuera de stock: "  ,
@@ -52,7 +51,7 @@ const guardarOrden = (cart, orden) => {
                     confirmButtonText: 'Accept'
                   })
             }
-        
+        }) })
 }
 
 export default guardarOrden;

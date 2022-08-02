@@ -1,3 +1,6 @@
+
+
+
 # King Premium Drinks 
 Ecommerce project developed in React JS for Coderhouse course. The project includes a product detail view, a cart view, navigation between different products categories and the use of Firebase as a data base for products storage and stock control.
 
